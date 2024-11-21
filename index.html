@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Out Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Lights Out Game</h1>
+    <div id="controls">
+        <button class="grid-size-btn" data-size="3">3x3 Grid</button>
+        <button class="grid-size-btn" data-size="4">4x4 Grid</button>
+        <button class="grid-size-btn" data-size="5">5x5 Grid</button>
+        <button id="reset-btn">Reset</button>
+        <p>Moves: <span id="move-counter">0</span></p>
+    </div>
+    <div id="game-container">
+        <div id="grid-container"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
