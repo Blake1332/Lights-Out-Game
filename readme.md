@@ -8,6 +8,7 @@ Forked from **https://github.com/paul-srijan/Lights-Out-Game**
 ## New Features
 - **Hint Button**: Shows you the next step to solve the grid
 - **Custom Grid Input**: Lets you put in your own grid and visually see the solution
+- **Randomize Grid**: Lets you  generate a random grid. It may or may not have a solution
 ---
 
 ## Features
