@@ -67,13 +67,13 @@ Make sure you have the following installed:
 ## Screenshots
 
 ### 3x3 Grid
-![3x3 Grid Example](img/3by3.jpg)
+![3x3 Grid Example](img/3by3.png)
 
 ### 4x4 Grid
-![4x4 Grid Example](img/4by4.jpg)
+![4x4 Grid Example](img/4by4.png)
 
 ### 5x5 Grid
-![5x5 Grid Example](img/5by5.jpg)
+![5x5 Grid Example](img/5by5.png)
 
 ---
 
