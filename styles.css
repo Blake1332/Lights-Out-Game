@@ -5,18 +5,15 @@ body {
     padding: 0;
     background: #f4f4f4;
 }
-
 h1 {
     margin: 20px 0;
     color: #333;
 }
-
 #game-container {
     display: flex;
     justify-content: center;
     margin: 20px;
 }
-
 #grid-container {
     display: grid;
     gap: 5px;
@@ -24,7 +21,6 @@ h1 {
     padding: 10px;
     border-radius: 10px;
 }
-
 #grid-container button {
     width: 60px;
     height: 60px;
@@ -33,24 +29,19 @@ h1 {
     cursor: pointer;
     transition: background-color 0.3s;
 }
-
 #grid-container button.on {
     background-color: #4caf50;
 }
-
 #grid-container button.off {
     background-color: #000;
 }
-
 #controls {
     margin-top: 20px;
 }
-
 #controls p {
     font-size: 1.2em;
     margin: 10px 0;
 }
-
 button {
     padding: 10px 20px;
     font-size: 1em;
@@ -61,7 +52,46 @@ button {
     color: white;
     transition: background 0.3s;
 }
-
 button:hover {
     background: #0056b3;
+}
+#solve-btn {
+    background-color: #28a745;
+  
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#solve-btn:hover {
+    background-color: #218838;
+   
+}
+
+#custom-grid-input {
+    width: 200px;
+    height: 60px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+#custom-grid-input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+#set-custom-grid {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+#set-custom-grid:hover {
+    background-color: #0056b3;
 }
