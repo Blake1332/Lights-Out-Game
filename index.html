@@ -13,11 +13,17 @@
         <button class="grid-size-btn" data-size="4">4x4 Grid</button>
         <button class="grid-size-btn" data-size="5">5x5 Grid</button>
         <button id="reset-btn">Reset</button>
+        <button id="solve-btn">Hint</button> 
         <p>Moves: <span id="move-counter">0</span></p>
     </div>
     <div id="game-container">
         <div id="grid-container"></div>
     </div>
+    <div>
+        <textarea id="custom-grid-input" rows="3" cols="20" placeholder="Enter grid state (e.g., 111000111)"></textarea>
+        <button id="set-custom-grid">Set Grid</button>
+    </div>
+    <p id="solvability-message"></p>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
 </body>
