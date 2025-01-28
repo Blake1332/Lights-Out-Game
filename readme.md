@@ -5,6 +5,10 @@ A simple yet fun **Lights Out Game** built using HTML, CSS, JavaScript, and jQue
 Forked from **https://github.com/paul-srijan/Lights-Out-Game**
 
 ---
+## New Features
+- **Hint Button**: Shows you the next step to solve the grid
+- **Custom Grid Input**: Lets you put in your own grid and visually see the solution
+---
 
 ## Features
 - **Dynamic Grid Sizes**: Choose between **3x3**, **4x4**, or **5x5** grids.
@@ -12,9 +16,6 @@ Forked from **https://github.com/paul-srijan/Lights-Out-Game**
 - **Win Condition**: Alerts when all the lights are turned off.
 - **Move Counter**: Tracks the number of moves taken to solve the puzzle.
 - **Reset Button**: Restart the game with the current grid size.
-
-- **Hint Button**: Shows you the next step to solve the grid
-- **Custom Grid Input**: Lets you put in your own grid and visually see the solution
 
 ---
 
