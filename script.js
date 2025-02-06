@@ -1,6 +1,6 @@
 $(document).ready(function() {
     let gridSize = 3; // Default grid size
-    let moves = 0;
+    let moves = 0; // Counter for moves
     let solution = []; // Store the solution globally
 
     // Create the grid
@@ -55,7 +55,7 @@ $(document).ready(function() {
         checkWin();
     });
 
-    // when grid size button is clicked
+    // When grid size button is clicked
     $(".grid-size-btn").on("click", function() {
         gridSize = parseInt($(this).data("size")); // Get grid size from button
         moves = 0; // Reset moves
@@ -64,12 +64,12 @@ $(document).ready(function() {
         createGrid(); // Recreate the grid
     });
 
-    // reset button is clicked
+    // Reset button is clicked
     $("#reset-btn").on("click", function() {
         moves = 0;
         solution = []; // Reset solution
         $("#move-counter").text(moves);
-        createGrid();
+        createGrid(); // Create blank grid
     });
 
     // Get the current state of the grid
@@ -91,16 +91,18 @@ $(document).ready(function() {
         // Construct the coefficient matrix A
         for (let i = 0; i < n; i++) {
             const row = new Array(n).fill(0);
-            row[i] = 1; //current
+            row[i] = 1; // Current button
             const r = Math.floor(i / gridSize);
             const c = i % gridSize;
             if (r > 0) row[i - gridSize] = 1; // Top
             if (r < gridSize - 1) row[i + gridSize] = 1; // Bottom
             if (c > 0) row[i - 1] = 1; // Left
             if (c < gridSize - 1) row[i + 1] = 1; // Right
+
             A.push(row);
         }
-        // Gaussian elimination Z2
+
+        // Gaussian elimination in Z2
         for (let i = 0; i < n; i++) {
             let pivot = i;
             while (pivot < n && A[pivot][i] === 0) pivot++;
@@ -130,9 +132,8 @@ $(document).ready(function() {
                 solution[i] = 1;
             }
         }
-        return solution
+        return solution;
     };
-
 
     // Solve the game step by step
     $('#solve-btn').on('click', function() {
@@ -155,7 +156,7 @@ $(document).ready(function() {
             $('#move-counter').text(moves);
             solution[nextStepIndex] = 0;
         } else {
-            alert("Unsolvable.");
+            alert("Unsolvable. Refresh page if looping");
         }
 
         checkWin();
@@ -179,8 +180,6 @@ $(document).ready(function() {
         }
     });
 
-
-
     // Randomize the grid
     $("#randomize-btn").on("click", function() {
         const initialState = Array.from({
@@ -193,20 +192,88 @@ $(document).ready(function() {
         $("#move-counter").text(moves);
         createGrid(initialState); // Create grid with random state
     });
+
+    // Handle custom grid size button click
+    $("#custom-size-btn").on("click", function() {
+        const customSize = parseInt($("#custom-size-input").val());
+        if (customSize && customSize >= 1 && customSize <= 100) { //we should set a upper bound but that is no fun for now lets keep it 100 and make the cpu hate us (:
+            gridSize = customSize;
+            moves = 0;
+            solution = []; 
+            $("#move-counter").text(moves);
+            createGrid(); 
+        } else {
+            alert("Please enter a valid grid size (1-20).");
+        }
+    });
+
     // Initialize the game
     createGrid();
 });
-
-
 
 $(document).ready(function() {
     // Event listener for grid size buttons
     $(".grid-size-btn").click(function() {
         const size = $(this).data("size");
         $("#solvability-message").text("");
-        // unsolvable
+        // Not always solvable
         if (size === 4 || size === 5) {
             $("#solvability-message").text("Not always solvable");
         }
     });
+});
+
+
+// Very buggy and experimental.I am reaching my coding limits...
+$("#auto-solve-btn").on("click", function() {
+    // Disable the auto-solve button temp
+    $(this).prop("disabled", true);
+
+    // every 250ms
+    const intervalId = setInterval(function() {
+        // Check if solved
+        const allOff = $("#grid-container button").filter(".on").length === 0;
+        if (allOff) {
+            clearInterval(intervalId); // Stop the interval
+            alert("The game has been solved!");
+            $("#auto-solve-btn").prop("disabled", false); // Re-enable the button
+            return;
+        }
+
+
+
+        // Call the hint button
+        $("#solve-btn").click();
+
+        
+        if (solution.length === 0) {
+            clearInterval(intervalId); // Stop the interval
+            alert("The game is unsolvable");
+            $("#auto-solve-btn").prop("disabled", false); // Re-enable the button
+        }
+    }, 250); // 250ms = 0.25 second
+});
+
+
+$(document).ready(function() {
+    $("#toggle-experimental-btn").on("click", function() {
+
+        const experimentalSection = $("#experimental");
+
+        if (experimentalSection.is(":visible")) {
+
+            experimentalSection.hide();
+
+            $(this).text("Show Experimental Features");
+
+        } else {
+
+            experimentalSection.show();
+
+            $(this).text("Hide Experimental Features");
+
+        }
+
+    });
+
 });
