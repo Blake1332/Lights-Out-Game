@@ -1,3 +1,4 @@
+/*no commets this is all just css style*/
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -94,4 +95,57 @@ button:hover {
 }
 #set-custom-grid:hover {
     background-color: #0056b3;
+}
+
+#experimental {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+#experimental div {
+    margin-bottom: 10px;
+}
+
+#experimental input,
+#experimental textarea {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#experimental button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #007BFF;
+    color: white;
+    transition: background 0.3s;
+}
+
+#experimental button:hover {
+    background: #0056b3;
+}
+
+#toggle-experimental-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #28a745;
+    color: white;
+    transition: background 0.3s;
+}
+
+#toggle-experimental-btn:hover {
+    background: #218838;
 }
