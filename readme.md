@@ -7,7 +7,7 @@ Forked from **https://github.com/paul-srijan/Lights-Out-Game**
 ---
 ## New(Experimental) EXTREME Features
 - **NxN Grid Sizes**: Up to 100x100 for computation reasons but can be unbounded in code
-- **Auto Solver**: Uses hint until its solved(buddy when no solution)
+- **Auto Solver**: Uses hint until its solved(buggy when no solution)
 ---
 
 ## Features
