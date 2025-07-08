@@ -8,8 +8,8 @@ A simple yet fun **Lights Out Game** built using HTML, CSS, JavaScript, and jQue
 ### https://raw.githack.com/Blake1332/Lights-Out-Game/main/index.html
 ---
 ## New(Experimental) EXTREME Features
-- **NxN Grid Sizes**: Up to 100x100 for computation reasons but can be unbounded in code
-- **Auto Solver**: Uses hint until its solved(buggy when no solution)
+- **NxN Grid Sizes**: Up to 100x100 for computation reasons but can be unbounded in code. Remember this runs entirely in your broswers ram...
+- **Auto Solver**: Solves the puzzle. Remember for some N*N grid sizes no solution exist to turn off all the lights!
 ---
 
 ## Features
