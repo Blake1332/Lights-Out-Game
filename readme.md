@@ -2,7 +2,8 @@
 
 A simple yet fun **Lights Out Game** built using HTML, CSS, JavaScript, and jQuery. The goal is to turn off all the lights on the grid. Clicking on a cell toggles that cell and its immediate neighbors. The challenge lies in achieving this with the minimum number of moves.
 
-Forked from **https://github.com/paul-srijan/Lights-Out-Game**
+Code from **https://github.com/paul-srijan/Lights-Out-Game** mainly the HTML, CSS.
+Linear algebra logic solver and dynamic sizes created by me.
 
 ---
 ## New(Experimental) EXTREME Features
@@ -81,8 +82,3 @@ Make sure you have the following installed:
 ### Custom Grid Size (experimental)
 ![20x20 Grid Example](img/20by20.png)
 ---
-
-## Original Author
-
-**Srijan Paul**  
-[GitHub Profile](https://github.com/paul-srijan)
