@@ -5,7 +5,7 @@ A simple yet fun **Lights Out Game** built using HTML, CSS, JavaScript, and jQue
 ### Code from **https://github.com/paul-srijan/Lights-Out-Game** mainly the HTML, CSS. <br>
 ### Linear algebra logic solver and dynamic sizes created by me. <br>
 ### Check out a live demo here <br>
-### https://raw.githack.com/Blake1332/Lights-Out-Game/main/index.html
+### https://blake1332.github.io/Lights-Out-Game/
 ---
 ## New(Experimental) EXTREME Features
 - **NxN Grid Sizes**: Up to 100x100 for computation reasons but can be unbounded in code. Remember this runs entirely in your broswers ram...
