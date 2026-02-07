@@ -7,7 +7,8 @@ body {
     background: #f4f4f4;
 }
 h1 {
-    margin: 20px 0;
+    margin: 25px 0;
+    font-size: 2.4em;
     color: #333;
 }
 #game-container {
@@ -17,15 +18,20 @@ h1 {
 }
 #grid-container {
     display: grid;
-    gap: 5px;
+    gap: 6px;
     background: #ccc;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 12px;
+    border-radius: 12px;
+}
+#large-grid-canvas {
+    border-radius: 12px;
+    cursor: pointer;
 }
 #grid-container button {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border: none;
+    border-radius: 6px;
     background-color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -36,34 +42,86 @@ h1 {
 #grid-container button.off {
     background-color: #000;
 }
+#grid-container button.win-glow {
+    background-color: #4caf50;
+    transition: background-color 0.15s ease;
+}
+#rules-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 16px 32px;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 8px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    transition: background 0.3s;
+}
+#rules-toggle-btn:hover {
+    background: #0056b3;
+}
+#rules-popup {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 440px;
+    padding: 20px 25px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    z-index: 1000;
+    display: none;
+}
+#rules-popup h3 {
+    margin: 0 0 12px;
+    font-size: 3em;
+    color: #333;
+    text-align: center;
+}
+#rules-popup ul {
+    margin: 0;
+    padding-left: 22px;
+}
+#rules-popup li {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 1.5em;
+    line-height: 1.5;
+}
 #controls {
-    margin-top: 20px;
+    margin-top: 25px;
 }
 #controls p {
-    font-size: 1.2em;
-    margin: 10px 0;
+    font-size: 1.5em;
+    margin: 12px 0;
 }
 button {
-    padding: 10px 20px;
-    font-size: 1em;
+    padding: 14px 28px;
+    font-size: 1.2em;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     background: #007BFF;
     color: white;
     transition: background 0.3s;
+    margin: 4px;
 }
 button:hover {
     background: #0056b3;
 }
 #solve-btn {
     background-color: #28a745;
-  
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 14px 28px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1.2em;
 }
 #solve-btn:hover {
     background-color: #218838;
@@ -71,13 +129,13 @@ button:hover {
 }
 
 #custom-grid-input {
-    width: 200px;
-    height: 60px;
-    padding: 10px;
+    width: 260px;
+    height: 70px;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 18px;
+    margin-bottom: 12px;
 }
 #custom-grid-input:focus {
     border-color: #007BFF;
@@ -87,10 +145,10 @@ button:hover {
     background-color: #007BFF;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 14px 28px;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
+    font-size: 1.2em;
+    border-radius: 6px;
     transition: background 0.3s;
 }
 #set-custom-grid:hover {
@@ -98,33 +156,41 @@ button:hover {
 }
 
 #experimental {
-    margin-top: 20px;
-    padding: 10px;
+    margin-top: 25px;
+    padding: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     background: #f9f9f9;
 }
 
 #experimental div {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+}
+#solve-speed-input {
+    width: 80px;
+}
+#solve-speed-label {
+    font-size: 0.95em;
+    color: #555;
+    margin-left: 4px;
 }
 
 #experimental input,
 #experimental textarea {
-    width: 200px;
-    padding: 10px;
+    width: 260px;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 18px;
+    margin-bottom: 12px;
 }
 
 #experimental button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 14px 28px;
+    font-size: 1.2em;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     background: #007BFF;
     color: white;
     transition: background 0.3s;
@@ -135,12 +201,12 @@ button:hover {
 }
 
 #toggle-experimental-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
+    margin-top: 25px;
+    padding: 14px 28px;
+    font-size: 1.2em;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     background: #28a745;
     color: white;
     transition: background 0.3s;
@@ -148,4 +214,65 @@ button:hover {
 
 #toggle-experimental-btn:hover {
     background: #218838;
+}
+
+/* Modal overlay */
+#modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+#modal-overlay.visible {
+    display: flex;
+}
+#modal-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px 50px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    max-width: 420px;
+    width: 90%;
+    animation: modalPop 0.3s ease;
+}
+#modal-message {
+    font-size: 1.4em;
+    color: #333;
+    margin: 0 0 25px;
+    line-height: 1.5;
+}
+#modal-box.win #modal-message {
+    font-size: 1.7em;
+    color: #28a745;
+    font-weight: bold;
+}
+#modal-close-btn {
+    padding: 12px 40px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+#modal-close-btn:hover {
+    background: #0056b3;
+}
+@keyframes modalPop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
